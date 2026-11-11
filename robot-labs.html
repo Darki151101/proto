@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!--
+  CIAN Robotics · paginas/robot-labs.html
+  Laboratorios y proyectos del equipo. Está dentro de /paginas/, por eso los enlaces al resto del sitio llevan "../".
+  NOTA: los proyectos y estados son de ejemplo; reemplázalos por los reales.
+-->
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Robot Labs · CIAN Robotics</title>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { ink: '#0B1220', panel: '#121C2F', line: '#25375A', arm: '#FF6A1F', cian: '#37D6E8' },
+        fontFamily: { display: ['"Chakra Petch"', 'sans-serif'], sans: ['"IBM Plex Sans"', 'sans-serif'] }
+      } }
+    }
+  </script>
+  <style>
+    body { background: #0B1220; color: #E6ECF5; }
+    :focus-visible { outline: 2px solid #37D6E8; outline-offset: 2px; }
+    .blueprint {
+      background-image:
+        linear-gradient(rgba(55,214,232,.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(55,214,232,.07) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+  </style>
+</head>
+
+<body class="font-sans antialiased">
+
+  <!-- ================= HEADER ================= -->
+  <header class="sticky top-0 z-30 border-b border-line bg-ink/90 backdrop-blur">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="../index.html" class="font-display font-bold text-xl tracking-wide"><span class="text-cian">CIAN</span> Robotics</a>
+      <button id="menu-btn" class="md:hidden px-3 py-2 rounded-md border border-line" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">☰</button>
+      <nav id="menu" aria-label="Principal"
+           class="hidden md:flex absolute md:static top-16 inset-x-0 flex-col md:flex-row gap-1 p-4 md:p-0 bg-ink md:bg-transparent border-b md:border-0 border-line">
+        <a href="../index.html" class="px-3 py-2 rounded-md text-sm font-medium hover:text-cian">Inicio</a>
+        <a href="robot-labs.html" aria-current="page" class="px-3 py-2 rounded-md text-sm font-medium text-cian">Robot Labs</a>
+        <a href="eventos.html" class="px-3 py-2 rounded-md text-sm font-medium hover:text-cian">Eventos</a>
+        <a href="reclutamiento.html" class="px-3 py-2 rounded-md text-sm font-semibold bg-arm text-ink hover:brightness-110 md:ml-2">Únete al equipo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="blueprint border-b border-line">
+      <div class="max-w-6xl mx-auto px-4 py-14 md:py-20">
+        <h1 class="font-display font-bold text-4xl sm:text-5xl leading-[1.05]">Robot Labs</h1>
+        <p class="mt-4 text-lg text-slate-300 max-w-2xl">
+          El equipo se organiza en laboratorios por especialidad. Cada uno tiene proyectos activos en los que puedes participar.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= LABORATORIOS =================
+      Para agregar un laboratorio, copia un bloque <article> y cambia título, descripción,
+      tecnologías y proyectos. Estados usados: En desarrollo (cian), En pruebas (naranja).
+    -->
+    <section class="max-w-6xl mx-auto px-4 py-14 space-y-6">
+
+      <!-- Laboratorio 1 -->
+      <article class="grid md:grid-cols-5 gap-6 bg-panel border border-line border-l-4 border-l-arm rounded-xl p-6">
+        <div class="md:col-span-2">
+          <h2 class="font-display font-bold text-2xl">Robótica móvil y autónoma</h2>
+          <p class="mt-2 text-slate-300">Robots que se desplazan, evitan obstáculos y toman decisiones por su cuenta.</p>
+          <p class="mt-4 text-sm text-slate-400">Tecnologías: Arduino, sensores infrarrojos y ultrasónicos, control PID.</p>
+        </div>
+        <ul class="md:col-span-3 space-y-3">
+          <li class="rounded-lg bg-ink border border-line p-4 flex flex-wrap items-center justify-between gap-2">
+            <div><h3 class="font-semibold">Robot seguidor de línea</h3><p class="text-sm text-slate-400">Control PID para vueltas más rápidas.</p></div>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-arm/15 text-arm">En pruebas</span>
+          </li>
+          <li class="rounded-lg bg-ink border border-line p-4 flex flex-wrap items-center justify-between gap-2">
+            <div><h3 class="font-semibold">Robot de sumo</h3><p class="text-sm text-slate-400">Chasis compacto y estrategia de ataque.</p></div>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-cian/15 text-cian">En desarrollo</span>
+          </li>
+        </ul>
+      </article>
+
+      <!-- Laboratorio 2 -->
+      <article class="grid md:grid-cols-5 gap-6 bg-panel border border-line border-l-4 border-l-cian rounded-xl p-6">
+        <div class="md:col-span-2">
+          <h2 class="font-display font-bold text-2xl">Visión por computadora</h2>
+          <p class="mt-2 text-slate-300">Cámaras y modelos para que el robot reconozca objetos y personas.</p>
+          <p class="mt-4 text-sm text-slate-400">Tecnologías: Python, OpenCV, MediaPipe.</p>
+        </div>
+        <ul class="md:col-span-3 space-y-3">
+          <li class="rounded-lg bg-ink border border-line p-4 flex flex-wrap items-center justify-between gap-2">
+            <div><h3 class="font-semibold">Detección de pose para teleoperación</h3><p class="text-sm text-slate-400">Controlar un brazo con el movimiento del cuerpo.</p></div>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-arm/15 text-arm">En pruebas</span>
+          </li>
+          <li class="rounded-lg bg-ink border border-line p-4 flex flex-wrap items-center justify-between gap-2">
+            <div><h3 class="font-semibold">Reconocimiento de objetos en pista</h3><p class="text-sm text-slate-400">Identificar piezas y obstáculos en tiempo real.</p></div>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-cian/15 text-cian">En desarrollo</span>
+          </li>
+        </ul>
+      </article>
+
+      <!-- Laboratorio 3 -->
+      <article class="grid md:grid-cols-5 gap-6 bg-panel border border-line border-l-4 border-l-arm rounded-xl p-6">
+        <div class="md:col-span-2">
+          <h2 class="font-display font-bold text-2xl">Brazos y manipuladores</h2>
+          <p class="mt-2 text-slate-300">Cinemática, control de servos y agarre de objetos.</p>
+          <p class="mt-4 text-sm text-slate-400">Tecnologías: servomotores, cinemática inversa, Arduino y Python.</p>
+        </div>
+        <ul class="md:col-span-3 space-y-3">
+          <li class="rounded-lg bg-ink border border-line p-4 flex flex-wrap items-center justify-between gap-2">
+            <div><h3 class="font-semibold">Brazo robótico de 3 ejes</h3><p class="text-sm text-slate-400">Plataforma base para prácticas y demostraciones.</p></div>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-arm/15 text-arm">En pruebas</span>
+          </li>
+        </ul>
+      </article>
+
+      <!-- Laboratorio 4 -->
+      <article class="grid md:grid-cols-5 gap-6 bg-panel border border-line border-l-4 border-l-cian rounded-xl p-6">
+        <div class="md:col-span-2">
+          <h2 class="font-display font-bold text-2xl">Electrónica y sistemas embebidos</h2>
+          <p class="mt-2 text-slate-300">Placas, sensores y firmware que dan vida a cada robot.</p>
+          <p class="mt-4 text-sm text-slate-400">Tecnologías: microcontroladores, diseño de PCB, drivers de motor.</p>
+        </div>
+        <ul class="md:col-span-3 space-y-3">
+          <li class="rounded-lg bg-ink border border-line p-4 flex flex-wrap items-center justify-between gap-2">
+            <div><h3 class="font-semibold">Placa base propia del equipo</h3><p class="text-sm text-slate-400">Una sola PCB para alimentación, drivers y sensores.</p></div>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-cian/15 text-cian">En desarrollo</span>
+          </li>
+        </ul>
+      </article>
+
+      <!-- Laboratorio 5 -->
+      <article class="grid md:grid-cols-5 gap-6 bg-panel border border-line border-l-4 border-l-arm rounded-xl p-6">
+        <div class="md:col-span-2">
+          <h2 class="font-display font-bold text-2xl">Diseño mecánico</h2>
+          <p class="mt-2 text-slate-300">Modelado CAD, impresión 3D y fabricación de piezas.</p>
+          <p class="mt-4 text-sm text-slate-400">Tecnologías: Fusion 360, SolidWorks, impresión 3D.</p>
+        </div>
+        <ul class="md:col-span-3 space-y-3">
+          <li class="rounded-lg bg-ink border border-line p-4 flex flex-wrap items-center justify-between gap-2">
+            <div><h3 class="font-semibold">Chasis modular para robots de competencia</h3><p class="text-sm text-slate-400">Piezas reutilizables entre categorías.</p></div>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-cian/15 text-cian">En desarrollo</span>
+          </li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- ================= LLAMADA A ACCIÓN ================= -->
+    <section class="border-t border-line bg-panel/40">
+      <div class="max-w-6xl mx-auto px-4 py-12 flex flex-wrap items-center justify-between gap-4">
+        <h2 class="font-display font-bold text-2xl">¿Qué laboratorio te interesa?</h2>
+        <div class="flex flex-wrap gap-3">
+          <a href="reclutamiento.html" class="px-5 h-11 inline-flex items-center rounded-lg bg-arm text-ink font-semibold hover:brightness-110">Únete al equipo</a>
+          <a href="eventos.html" class="px-5 h-11 inline-flex items-center rounded-lg border border-line hover:border-cian">Ver eventos</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-line">
+    <div class="max-w-6xl mx-auto px-4 py-8 grid sm:grid-cols-2 gap-4 text-sm text-slate-400">
+      <p>© <span id="year">2026</span> CIAN Robotics. Todos los derechos reservados.</p>
+      <p class="sm:text-right">Equipo estudiantil de robótica, investigación y competencias.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Menú móvil + año automático
+    const btn = document.getElementById('menu-btn'), menu = document.getElementById('menu');
+    btn.addEventListener('click', () => {
+      const open = menu.classList.toggle('hidden') === false;
+      btn.setAttribute('aria-expanded', open);
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
